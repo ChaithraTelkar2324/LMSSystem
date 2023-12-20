@@ -33,7 +33,7 @@
 		
 			  <div class="mb-3">
 			    <label class="form-label">Book Id</label>
-			    <input type="text" value="<%=b.getBookId()%>" name="bookId" class="form-control">
+			    <input readonly type="text" value="<%=b.getBookId()%>" name="bookId" class="form-control">
 			  </div>
 			  
 			  <div class="mb-3">
@@ -49,6 +49,11 @@
 			  <div class="mb-3">
 			    <label class="form-label">Description</label>
 			    <input type="text" value="<%=b.getDescription()%>"  name="description" class="form-control">
+			  </div>
+			  
+			   <div class="mb-3">
+			    <label class="form-label">No Of Copies</label>
+			    <input type="number" min={1} max={100} value="<%=b.getUnit()%>"  name="unit" class="form-control">
 			  </div>
 			  
 			  <input type="hidden" name="bookId" value="<%=b.getBookId()%>" >

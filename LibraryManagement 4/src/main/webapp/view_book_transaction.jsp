@@ -1,8 +1,10 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="com.conn.DBConnect"%>
-<%@page import="com.dao.StudentDAO"%>
-<%@page import="com.entity.Student"%>
+<%@page import="com.dao.BooksTransactionsDAO"%>
+<%@page import="com.entity.BooksTransaction"%>
 <%@page import="java.util.List"%>
+
+
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -19,10 +21,7 @@
 
 		<%@include file="navbar.jsp" %>
 		
-		<%
-		Connection conn = DBConnect.getConn(); 
-		out.print(conn);
-		%>
+		
 
 		<div class="container p-3">
 		<div class="card">
@@ -37,36 +36,41 @@
 		<p class="text-center text-success">${errorMsg }</p>
 		<c:remove var="errorMsg"/>
 		
-		</c:if>
-		<p class="text-center fs-1 ">All Students</p>
+		</c:if>	
+		<p class="text-center fs-1 ">All Books Transaction</p>
 			<table class="table">
 			  <thead>
 			    <tr>
-			      <th scope="col">Student Id</th>
-			      <th scope="col">Student First Name</th>
-			      <th scope="col">Student Last Author</th>
-			      <th scope="col">Student EmailId</th>
-			         <th scope="col">Course</th>
-			       <th scope="col">Action</th>
+			      <th scope="col">Book Id</th>
+			      <th scope="col">User Id</th>
+			      <th scope="col">No Of Copies</th>
+			      <th scope="col">AssignedDate</th>
+			      <th scope="col">DeadlineDate</th>
+			      <th scope="col">ReturnDate</th>
+			      <th scope="col">Fine</th>
+			      <th scope="col">Action</th>
 			    </tr>
 			  </thead>
 			  <tbody>
 			  
 			  <% 
 			  
-			  StudentDAO dao = new StudentDAO(DBConnect.getConn());
-			  List<Student> list = dao.getAllStudent();
-			  for(Student s : list){
+			  BooksTransactionsDAO dao = new BooksTransactionsDAO(DBConnect.getConn());
+			  List<BooksTransaction> list = dao.getAllBookTransaction();
+			  for(BooksTransaction b : list){
 			  %>
-
+			  
+			  
 			    <tr>
-			      <th scope="row"><%=s.getStudentId() %></th>
-			      <td><%=s.getStudentFName() %></td>
-				  <td><%=s.getStudentLName() %></td>
-			      <td><%=s.getStudentEmailId() %></td>
-			       <td><%=s.getCourse() %></td>
-			      <td><a href="edit_student.jsp?studentId=<%=s.getStudentId()%>" class="btn btn-sm btn-primary">Edit</a>
-			      <a href="deletestudent?studentId=<%=s.getStudentId()%>" class="btn btn-sm btn-danger ms-1">Delete</a>
+			      <th scope="row"><%=b.getBook() %></th>
+			      <td><%=b.getuser() %></td>
+				  <td><%=b.getUnit() %></td>
+			      <td><%=b.getAssigneddate() %></td>
+			      <td><%=b.getDeadlinedate() %></td>
+			      <td><%=b.getReturndate() %></td>
+			      <td><%=b.getFine() %></td>
+			      <td><a href="edit_book_transaction.jsp?id=<%=b.getId()%>" class="btn btn-sm btn-primary">Edit</a>
+			      
 			      </td>
 			    </tr>
 			    
@@ -83,3 +87,4 @@
 
 </body>
 </html>
+

@@ -10,31 +10,31 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.conn.DBConnect;
-import com.dao.StudentDAO;
+import com.dao.UserDAO;
 
-@WebServlet("/deletestudent")
-public class DeleteStudentServlet extends HttpServlet {
+@WebServlet("/deleteuser")
+public class DeleteUserServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		int studentId=Integer.parseInt(req.getParameter("studentId"));
+		int userId=Integer.parseInt(req.getParameter("userId"));
 		
-		StudentDAO dao=new StudentDAO(DBConnect.getConn());
-		boolean f=dao.deleteStudent(studentId);
+		UserDAO dao=new UserDAO(DBConnect.getConn());
+		boolean f=dao.deleteuser(userId);
 		HttpSession session=req.getSession();
 		
 		
 		if(f) {
 			
-			session.setAttribute("SuccMsg", "book details delete successfully....");
-			resp.sendRedirect("view_student.jsp");
-			//System.out.println("book details submit successfully....");
+			session.setAttribute("SuccMsg", "user delete successfully....");
+			resp.sendRedirect("view_user.jsp");
+			//System.out.println("user details submit successfully....");
 			
 		}else {
 			session.setAttribute("errorMsg", "Something wrong in server....");
-			resp.sendRedirect("view_student.jsp");
-			//System.out.println("Somthing wrong in server....");
+			resp.sendRedirect("view_user.jsp");
+			//System.out.println("Something wrong in server....");
 		}
 	}
 

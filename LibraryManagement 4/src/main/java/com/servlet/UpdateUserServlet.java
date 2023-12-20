@@ -10,41 +10,43 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.conn.DBConnect;
-import com.entity.Student;
-import com.dao.StudentDAO;
+import com.entity.User;
+import com.dao.UserDAO;
 
-@WebServlet("/updatestudent")
-public class UpdateStudentServlet extends HttpServlet{
+@WebServlet("/updateuser")
+public class UpdateUserServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		
-		int studentId = Integer.parseInt(req.getParameter("studentId"));
-		String studentFName = req.getParameter("studentFName");
-		String studentLName = req.getParameter("studentLName");
-		String studentEmailId = req.getParameter("studentEmailId");
+		int userId = Integer.parseInt(req.getParameter("userId"));
+		String userFName = req.getParameter("userFName");
+		String userLName = req.getParameter("userLName");
+		String userEmailId = req.getParameter("userEmailId");
 		String course = req.getParameter("course");
-		String studentPassword = req.getParameter("studentPassword");
+		String userPassword = req.getParameter("userPassword");
+		String type = req.getParameter("type");
+		String role = req.getParameter("role");
 		
-		Student student = new Student(studentId,studentFName,studentLName,studentEmailId,course, studentPassword);
+		User user = new User(userId,userFName,userLName,userEmailId,course, userPassword,type,role);
 		
-		System.out.println(student);
+		System.out.println(user);
 		
 		
-		StudentDAO dao=new StudentDAO(DBConnect.getConn());
+		UserDAO dao=new UserDAO(DBConnect.getConn());
 		HttpSession session=req.getSession();
 		
-		boolean f=dao.updateStudent(student);
+		boolean f=dao.updateuser(user);
 		if(f) {
 			
 			session.setAttribute("SuccMsg", "book details submit successfully....");
-			resp.sendRedirect("view_student.jsp");
+			resp.sendRedirect("view_user.jsp");
 			//System.out.println("book details submit successfully....");
 			
 		}else {
 			session.setAttribute("errorMsg", "Something wrong in server....");
-			resp.sendRedirect("view_student.jsp");
+			resp.sendRedirect("view_user.jsp");
 			System.out.println("Somthing wrong in server....");
 		}
 	}

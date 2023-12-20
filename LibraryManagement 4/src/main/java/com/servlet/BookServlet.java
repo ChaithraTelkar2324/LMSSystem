@@ -23,10 +23,11 @@ public class BookServlet extends HttpServlet {
 		String bookName = req.getParameter("bookName");
 		String bookAuthor = req.getParameter("bookAuthor");
 		String description = req.getParameter("description");
+		int unit = Integer.parseInt(req.getParameter("unit"));
 		
-		Book book = new Book(bookId,bookName,bookAuthor,description);
+		Book book = new Book(bookId,bookName,bookAuthor,description,unit);
 		
-		System.out.println(book);
+		System.out.println("book here anna" + book);
 		
 		BookDAO dao=new BookDAO(DBConnect.getConn());
 		HttpSession session=req.getSession();

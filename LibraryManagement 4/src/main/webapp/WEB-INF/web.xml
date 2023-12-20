@@ -10,8 +10,48 @@
   	<description></description>
   	<servlet-class>com.servlet.SearchStudentServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>BookTransactionServlet</servlet-name>
+  	<display-name>BookTransactionServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.servlet.BookTransactionServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UpdateTransactionServlet</servlet-name>
+  	<display-name>UpdateTransactionServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.servlet.UpdateTransactionServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UpdateBookTransactionServlet</servlet-name>
+  	<display-name>UpdateBookTransactionServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.servlet.UpdateBookTransactionServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<display-name>LoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.servlet.LoginServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>SearchStudentServlet</servlet-name>
   	<url-pattern>/SearchStudentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BookTransactionServlet</servlet-name>
+  	<url-pattern>/BookTransactionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateTransactionServlet</servlet-name>
+  	<url-pattern>/UpdateTransactionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateBookTransactionServlet</servlet-name>
+  	<url-pattern>/UpdateBookTransactionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
 </web-app>

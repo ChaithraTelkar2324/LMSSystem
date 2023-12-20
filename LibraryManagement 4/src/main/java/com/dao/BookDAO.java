@@ -21,14 +21,14 @@ public class BookDAO {
 		boolean f=false;
 		try {
 			
-			String sql ="insert into books(bookId, bookName, bookAuthor, description) values (?, ?, ?, ?)";
+			String sql ="insert into books(bookId, bookName, bookAuthor, description, unit) values (?, ?, ?, ?, ?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
 			ps.setInt(1, book.getBookId());
 			ps.setString(2, book.getBookName());
 			ps.setString(3,  book.getBookAuthor());
 			ps.setString(4, book.getDescription());
-			
+			ps.setInt(5, book.getUnit());
 			int i=ps.executeUpdate();
 			if(i==1) {
 				f=true;
@@ -58,6 +58,7 @@ public class BookDAO {
 					b.setBookName(rs.getString(2));
 					b.setBookAuthor(rs.getString(3));
 					b.setDescription(rs.getString(4));
+					b.setUnit(rs.getInt(5));
 					list.add(b);
 					
 					
@@ -86,6 +87,7 @@ public class BookDAO {
 					b.setBookName(rs.getString(2));
 					b.setBookAuthor(rs.getString(3));
 					b.setDescription(rs.getString(4));
+					b.setUnit(rs.getInt(5));
 					
 					
 					
@@ -104,14 +106,17 @@ public class BookDAO {
 			boolean f=false;
 			try {
 				
-				String sql ="update books set bookName=?, bookAuthor=?, description=? where bookId=?";
+				String sql ="update books set bookName=?, bookAuthor=?, description=?, unit=? where bookId=?";
 				PreparedStatement ps = conn.prepareStatement(sql);
 				
 				
 				ps.setString(1, book.getBookName());
 				ps.setString(2,  book.getBookAuthor());
 				ps.setString(3, book.getDescription());
-				ps.setInt(4, book.getBookId());
+				ps.setInt(4, book.getUnit());
+				ps.setInt(5, book.getBookId());
+				
+				
 				
 				int i=ps.executeUpdate();
 				if(i==1) {

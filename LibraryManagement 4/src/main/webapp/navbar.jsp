@@ -7,31 +7,44 @@
 				    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 				      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				        <li class="nav-item">
-				          <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
+				          <a class="nav-link active" aria-current="page" href="index.jsp">View Book</a>
 				        </li>
 				        <li class="nav-item">
 				          <a class="nav-link" href="add_Book.jsp">Add Book</a>
 				        </li>
 				        
 				        <li class="nav-item">
-				          <a class="nav-link" href="view_student.jsp">View Student</a>
+				          <a class="nav-link" href="view_user.jsp">View User</a>
 				        </li>
 				        
 				        <li class="nav-item">
-				          <a class="nav-link" href="add_student.jsp">Register as Student</a>
+				          <a class="nav-link" href="add_user.jsp">Add User</a>
 				        </li>
 				        
-				        <li class="nav-item">
+				       <!--  <li class="nav-item">
 				          <a class="nav-link" href="add_faculty.jsp">Register as Faculty</a>
+				        </li> -->
+				        
+				         <li class="nav-item">
+				          <a class="nav-link" href="view_book_transaction.jsp">View Book Assign</a>
 				        </li>
 				        
-				        <li class="nav-item">
+				         <li class="nav-item">
+				          <a class="nav-link" href="add_book_transaction.jsp">Book Assign</a>
+				        </li>
+				        
+				         <li class="nav-item">
+				          <a class="nav-link" href="loginprocess.jsp">Log Out</a>
+				        </li>
+				        
+				        
+				       <!--  <li class="nav-item">
 				          <a class="nav-link" href="view_faculty.jsp">View Faculty</a>
 				        </li>
 				        
 				        <li class="nav-item">
 				          <a class="nav-link" href="search_student.jsp">Search Student</a>
-				        </li>
+				        </li> -->
 				        
 				      </ul>
 				      

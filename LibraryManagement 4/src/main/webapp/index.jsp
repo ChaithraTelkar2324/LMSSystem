@@ -45,6 +45,7 @@
 			      <th scope="col">Book Name</th>
 			      <th scope="col">Book Author</th>
 			      <th scope="col">Description</th>
+			      <th scope="col">No Of Copies</th>
 			       <th scope="col">Action</th>
 			    </tr>
 			  </thead>
@@ -63,6 +64,7 @@
 			      <td><%=b.getBookName() %></td>
 				  <td><%=b.getBookAuthor() %></td>
 			      <td><%=b.getDescription() %></td>
+			      <td><%=b.getUnit() %></td>
 			      <td><a href="edit_book.jsp?bookId=<%=b.getBookId()%>" class="btn btn-sm btn-primary">Edit</a>
 			      <a href="deletebook?bookId=<%=b.getBookId()%>" class="btn btn-sm btn-danger ms-1">Delete</a>
 			      </td>

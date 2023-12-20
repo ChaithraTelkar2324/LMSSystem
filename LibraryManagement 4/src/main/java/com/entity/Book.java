@@ -6,23 +6,26 @@ public class Book {
 	private String bookName;
 	private String bookAuthor;
 	private String description;
+	private int unit;
 	
 	
 	public Book() {
 		super();
 	}
-	public Book(String bookName, String bookAuthor, String description) {
+	public Book(String bookName, String bookAuthor, String description,int unit) {
 		super();
 		this.bookName = bookName;
 		this.bookAuthor = bookAuthor;
 		this.description = description;
+		this.unit = unit;
 	}
-	public Book(int bookId, String bookName, String bookAuthor, String description) {
+	public Book(int bookId, String bookName, String bookAuthor, String description, int unit) {
 		super();
 		this.bookId = bookId;
 		this.bookName = bookName;
 		this.bookAuthor = bookAuthor;
 		this.description = description;
+		this.unit = unit;
 	}
 	public int getBookId() {
 		return bookId;
@@ -48,11 +51,18 @@ public class Book {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public int getUnit() {
+		return unit;
+	}
+	public void setUnit(int unit) {
+		this.unit = unit;
+	}
 	@Override
 	public String toString() {
 		return "Book [bookId=" + bookId + ", bookName=" + bookName + ", bookAuthor=" + bookAuthor + ", description="
-				+ description + "]";
+				+ description + ", unit=" + unit + "]";
 	}
+	
 	
 	
 
