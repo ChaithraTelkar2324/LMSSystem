@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
 		if(f) {
 			
 			session.setAttribute("SuccMsg", "user details submit successfully....");
-			resp.sendRedirect("view_user.jsp");
+			resp.sendRedirect("index.jsp");
 			//System.out.println("book details submit successfully....");
 			
 		}else {

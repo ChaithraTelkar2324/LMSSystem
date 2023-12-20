@@ -99,7 +99,7 @@
 			  
 			   <div class="mb-3">
 			    <label class="form-label">Fine</label>
-			    <input  type="number"  min=1 max=100 name="fine" value="<%=b.getFine()%>"  class="form-control">
+			    <input  type="number" min=1 name="fine" value="<%=b.getFine()%>"  class="form-control">
 			  </div>
 			  
 			  

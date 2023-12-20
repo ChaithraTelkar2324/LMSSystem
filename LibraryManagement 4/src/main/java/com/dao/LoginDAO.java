@@ -32,10 +32,9 @@ public class LoginDAO {
 			ps.setString(3, "attendant");
 			ps.setString(4, "admin");
 			
-//			boolean i = ps.execute();
-			 ResultSet result = ps.executeQuery();
+		   ResultSet result = ps.executeQuery();
 			
-//			System.out.print("dao respone" + i);
+
 			
 			if(result.next()) {
 				f=true;
